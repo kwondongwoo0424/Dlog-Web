@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from '../pages/Home';
+import Main from '../pages/Main';
 // import About from '../pages/About';
 
-function AppRoutes() {
+function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} /> */}
+        <Route path="/" element={<Main />} />
+        {/* <Route path="/about" element={<About />} /> */}
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default AppRoutes;
+export default Router;
