@@ -5,7 +5,7 @@ import { getPosts } from "../../api/post";
 
 const Main = () => {
   const dummydata: MainPagePostResponseType = getPosts();
-
+  
   return (
     <>
       <Header />

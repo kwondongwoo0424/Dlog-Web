@@ -3,6 +3,7 @@ import type { PostCardProps } from "../../types/post";
 
 const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
 
+  console.log(postsData)
   return (
     <div>
       <S.Title>PostCard</S.Title>
