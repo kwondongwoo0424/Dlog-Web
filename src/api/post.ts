@@ -1,14 +1,14 @@
 // import api from "../lib/axios";
 
 export const getPosts = /*async*/ () => {
-//   const response = await api.get(`{API ENDPOINT}`);
-//   if (response.status !== 200) {
-//     throw new Error();
-//   }
-//   return response.data;
+  //   const response = await api.get(`{API ENDPOINT}`);
+  //   if (response.status !== 200) {
+  //     throw new Error();
+  //   }
+  //   return response.data;
 
-    const responee = {
-        data: [
+  const responee = {
+    data: [
       {
         id: 1,
         title: "sync",
@@ -31,8 +31,8 @@ export const getPosts = /*async*/ () => {
       },
     ],
     message: "Successfully fetched",
-    }
-    return (responee)
+  };
+  return responee;
 };
 
 // export const dislikeReaction = async () => {

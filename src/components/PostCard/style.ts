@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-  color: red;
-`;
+export const Wrap = styled.div`
+    background-color: green;
+    margin: 10px;
+    cursor: pointer;
+`

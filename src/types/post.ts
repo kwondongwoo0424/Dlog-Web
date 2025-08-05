@@ -16,7 +16,12 @@ export interface MainPagePostResponseType {
   message: string;
 }
 
-//components/PostCard
-export interface PostCardProps {
+//components/PostsList
+export interface PostsListProps {
   postsData: MainPagePostDataType[];
 }
+
+//components/PostCard
+export interface PostCardProps {
+  postInfo: MainPagePostDataType;
+};

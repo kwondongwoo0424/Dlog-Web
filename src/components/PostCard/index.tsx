@@ -1,20 +1,15 @@
-import * as S from "./style";
 import type { PostCardProps } from "../../types/post";
+import * as S from "./style";
+import { useNavigate } from "react-router-dom";
 
-const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
-
-  console.log(postsData)
+const PostCard: React.FC<PostCardProps> = ({ postInfo }) => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <S.Title>PostCard</S.Title>
-      {postsData.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <img src={post.thumbnail} alt={post.thumbnailAlt} />
-          <p>{post.excerpt}</p>
-        </div>
-      ))}
-    </div>
+    <S.Wrap key={postInfo.id} onClick={() => navigate(`/post/${postInfo.id}`)}>
+      <h2>{postInfo.title}</h2>
+      <img src={postInfo.thumbnail} alt={postInfo.thumbnailAlt} />
+      <p>{postInfo.excerpt}</p>
+    </S.Wrap>
   );
 };
 

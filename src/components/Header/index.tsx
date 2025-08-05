@@ -2,9 +2,9 @@ import * as S from "./style"
 
 const Header = () => {
   return (
-    <div>
+    <S.Wrap>
       <p>header</p>
-    </div>
+    </S.Wrap>
   );
 };
 
