@@ -25,3 +25,15 @@ export interface PostsListProps {
 export interface PostCardProps {
   postInfo: MainPagePostDataType;
 };
+
+export interface PostDetailType {
+  id: number;
+  title: string;
+  thumbnail: string;
+  thumbnailAlt: string;
+  contents: string;
+  excerpt: string;
+  createdAt: string;
+  author: string;
+  likes: number;
+}

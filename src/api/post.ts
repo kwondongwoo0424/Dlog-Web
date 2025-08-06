@@ -1,4 +1,5 @@
 // import api from "../lib/axios";
+import { dummyPosts, dummyPostDetail } from "./dummy";
 
 export const getPosts = /*async*/ () => {
   //   const response = await api.get(`{API ENDPOINT}`);
@@ -7,38 +8,36 @@ export const getPosts = /*async*/ () => {
   //   }
   //   return response.data;
 
-  const responee = {
-    data: [
-      {
-        id: 1,
-        title: "sync",
-        thumbnail: "image1.png",
-        thumbnailAlt: "image excerpt1",
-        excerpt: "sync는 힘들다",
-        createdAt: "2025-07-25T22:35:59.359988",
-        author: "권동우",
-        likes: 3,
-      },
-      {
-        id: 2,
-        title: "Dlog 개발 일지",
-        thumbnail: "image.png",
-        thumbnailAlt: "image excerpt",
-        excerpt: "Dlog를 개발하며 있었던 일들",
-        createdAt: "2025-07-25T22:35:59.359988",
-        author: "kwondongwoo0424",
-        likes: 17,
-      },
-    ],
+  const response = {
+    data: serverSearchAllPost(),
     message: "Successfully fetched",
   };
-  return responee;
+  return response;
 };
 
-// export const dislikeReaction = async () => {
-//   const response = await api.get(`API ENDPOINT`);
-//   if (response.status !== 200) {
-//     throw new Error();
-//   }
-//   return response.data;
-// };
+
+
+export const getPostDetail = async (postId: number) => {
+  // const response = await api.get(`{API ENDPOINT}`);
+  // if (response.status !== 200) {
+  //   throw new Error();
+  // }
+  // return response.data;
+  const response = {
+    data: serverSearchPost(postId),
+    message: "Successfully fetched",
+  };
+  return response;
+};
+
+function serverSearchAllPost() {
+  return dummyPosts;
+}
+
+function serverSearchPost(postId: number) {
+  return dummyPostDetail.filter(post => post.id == postId)
+  // return dummyPosts.filter(searchPost(postId));  
+}
+
+
+// console.log(dummyPosts);

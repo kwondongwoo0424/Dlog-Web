@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
-    background-color: green;
-    margin: 10px;
-    cursor: pointer;
-`
+  border: 2px black solid;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+`;

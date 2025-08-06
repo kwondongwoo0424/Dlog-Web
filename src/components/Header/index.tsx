@@ -3,7 +3,8 @@ import * as S from "./style"
 const Header = () => {
   return (
     <S.Wrap>
-      <p>header</p>
+      <h1>Dlog</h1>
+      
     </S.Wrap>
   );
 };

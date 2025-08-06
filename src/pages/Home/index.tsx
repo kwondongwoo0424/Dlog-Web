@@ -1,21 +1,37 @@
 import { useState, useEffect } from "react";
 import PostsList from "../../components/PostsList";
-// import Sidebar from "../../components/sidebar";
 import type { MainPagePostResponseType } from "../../types/post";
 import { getPosts } from "../../api/post";
 import * as S from "./style"
 
 const Home = () => {
   const [posts, setPosts] = useState<MainPagePostResponseType | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setPosts(getPosts())
+    const fetchPosts = () => {
+      try {
+        const res = getPosts();
+        setPosts(res);
+      } catch (error) {
+        console.error("Failed to fetch posts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   return (
     <S.Wrap>
-      {/* <Sidebar /> */}
-      {posts ? <PostsList postsData={posts.data} /> : /*{<Loading />}*/ <p>loading</p>}
+      {loading ? (
+        <p>Loading...</p>
+      ) : posts?.data ? (
+        <PostsList postsData={posts.data} />
+      ) : (
+        <p>No posts found</p>
+      )}
     </S.Wrap>
   );
 };
