@@ -1,8 +1,8 @@
-import * as S from './styles';
+import * as S from './style';
 
 const Footer = () => {
     return (
-        <p>Dlog</p>
+        <p>Dlog Footer</p>
     )
 }
 
